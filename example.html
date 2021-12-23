@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      jQuery(".sheet-content").on('input',  ".number" , function() {
+          var number = jQuery( this ).val().replace(/\,/g, '');
+
+          number = number.split('').reverse().join('')
+          .replace(/(\d{3})/g, '$1,').replace(/\,$/, '')
+          .split('').reverse().join('');
+          jQuery( this ).val( number ) ;
+      });
+    </script>
+  </head>
+  <body>
+    <div class="sheet-content">
+      <form method="post">
+        <input type="text" class="number" />
+      </form>
+    </div>
+  </body>
+</html>
